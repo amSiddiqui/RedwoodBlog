@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material'
+import { Box } from '@mui/material'
 
 import { MetaTags } from '@redwoodjs/web'
 
@@ -8,12 +8,9 @@ const HomePage = () => {
   return (
     <>
       <MetaTags title="Home" description="Home page" />
-      {/* MUI container */}
-      <Container maxWidth="md">
-        <Box my={4}>
-          <ArticlesCell />
-        </Box>
-      </Container>
+      <Box>
+        <ArticlesCell />
+      </Box>
     </>
   )
 }
