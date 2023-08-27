@@ -76,7 +76,7 @@ const ContactPage = () => {
                     fullWidth
                     onChange={onChange}
                     onBlur={onBlur}
-                    value={value}
+                    value={value ? value : ''}
                     ref={ref}
                     label="Name"
                     name={name}
@@ -130,7 +130,7 @@ const ContactPage = () => {
                     fullWidth
                     onChange={onChange}
                     onBlur={onBlur}
-                    value={value}
+                    value={value ? value : ''}
                     multiline
                     minRows={4}
                     ref={ref}
