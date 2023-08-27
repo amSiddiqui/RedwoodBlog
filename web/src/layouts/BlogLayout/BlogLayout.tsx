@@ -47,11 +47,14 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
                 gutterBottom={false}
                 to={routes.home()}
                 sx={{
+                  fontFamily: "'Roboto', sans-serif",
+                  background:
+                    'linear-gradient(45deg, #FFA07A 30%, #FF6347 90%)', // Light to dark gray
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  fontWeight: 'bold',
                   mr: 2,
                   textDecoration: 'none',
-                  color: 'inherit',
-                  fontWeight: 'bold',
-                  fontFamily: 'Roboto, sans-serif',
                 }}
               >
                 Redwood Blog

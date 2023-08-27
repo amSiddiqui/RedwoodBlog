@@ -22,4 +22,13 @@ export default meta
 
 type Story = StoryObj<typeof Article>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    article: {
+      id: 1,
+      title: 'Article Title',
+      body: 'Article body.',
+      createdAt: '2021-10-10T00:00:00Z',
+    },
+  },
+}
