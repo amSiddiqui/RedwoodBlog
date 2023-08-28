@@ -42,16 +42,14 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
             <Toolbar disableGutters>
               <Typography
                 noWrap
-                variant="h6"
+                variant="h5"
                 component={Link}
                 gutterBottom={false}
                 to={routes.home()}
                 sx={{
                   fontFamily: "'Roboto', sans-serif",
-                  background:
-                    'linear-gradient(45deg, #FFA07A 30%, #FF6347 90%)', // Light to dark gray
                   WebkitBackgroundClip: 'text',
-                  color: 'transparent',
+                  color: 'inherit',
                   fontWeight: 'bold',
                   mr: 2,
                   textDecoration: 'none',
