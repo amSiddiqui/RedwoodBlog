@@ -1,6 +1,13 @@
 import type { Post } from '@prisma/client'
 
-import { posts, post, createPost, updatePost, deletePost } from './posts'
+import {
+  posts,
+  post,
+  createPost,
+  updatePost,
+  deletePost,
+  postSummaries,
+} from './posts'
 import type { StandardScenario } from './posts.scenarios'
 
 // Generated boilerplate tests do not account for all circumstances
@@ -15,6 +22,18 @@ describe('posts', () => {
 
     expect(result.length).toEqual(Object.keys(scenario.post).length)
   })
+
+  scenario(
+    'returns all post summaries with summary length to be 100',
+    async (scenario: StandardScenario) => {
+      const result = await postSummaries()
+      for (const post of result) {
+        expect(post.summary.length).toBeLessThanOrEqual(100)
+      }
+
+      expect(result.length).toEqual(Object.keys(scenario.post).length)
+    }
+  )
 
   scenario('returns a single post', async (scenario: StandardScenario) => {
     const result = await post({ id: scenario.post.one.id })
