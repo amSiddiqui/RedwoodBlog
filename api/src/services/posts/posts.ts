@@ -12,6 +12,10 @@ export const post: QueryResolvers['post'] = ({ id }) => {
   })
 }
 
+export const postSummaries: QueryResolvers['postSummaries'] = () => {
+  return db.$queryRaw`SELECT id, title, SUBSTRING(body, 1, 100) as summary FROM "Post"`
+}
+
 export const createPost: MutationResolvers['createPost'] = ({ input }) => {
   return db.post.create({
     data: input,

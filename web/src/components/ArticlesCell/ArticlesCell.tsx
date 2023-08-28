@@ -2,7 +2,7 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  CircularProgress,
+  Skeleton,
   Grid,
   Typography,
 } from '@mui/material'
@@ -13,15 +13,23 @@ import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 export const QUERY = gql`
   query ArticlesQuery {
-    articles: posts {
+    articles: postSummaries {
       id
       title
-      body
+      summary
     }
   }
 `
 
-export const Loading = () => <CircularProgress />
+export const Loading = () => (
+  <Grid container spacing={2}>
+    {Array.from(new Array(3)).map((_, index) => (
+      <Grid key={index} item xs={12} sm={6} md={4}>
+        <Skeleton variant="rectangular" height={200} />
+      </Grid>
+    ))}
+  </Grid>
+)
 
 export const Empty = () => <div>Empty</div>
 
@@ -45,7 +53,7 @@ export const Success = ({ articles }: CellSuccessProps<ArticlesQuery>) => {
                     {article.title}
                   </Typography>
                   <Typography variant="body1" component="p">
-                    {article.body}
+                    {article.summary} ...
                   </Typography>
                 </CardContent>
               </CardActionArea>

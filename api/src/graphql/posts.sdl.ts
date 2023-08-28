@@ -6,9 +6,16 @@ export const schema = gql`
     createdAt: DateTime!
   }
 
+  type PostSummary {
+    id: Int!
+    title: String!
+    summary: String!
+  }
+
   type Query {
     posts: [Post!]! @skipAuth
     post(id: Int!): Post @skipAuth
+    postSummaries: [PostSummary!]! @skipAuth
   }
 
   input CreatePostInput {
