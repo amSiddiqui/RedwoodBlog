@@ -4273,9 +4273,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^5.14.6":
-  version: 5.14.6
-  resolution: "@mui/icons-material@npm:5.14.6"
+"@mui/icons-material@npm:^5.14.7":
+  version: 5.14.7
+  resolution: "@mui/icons-material@npm:5.14.7"
   dependencies:
     "@babel/runtime": ^7.22.10
   peerDependencies:
@@ -4285,7 +4285,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 9ba51da2c424f6643754de1d99802d63aaf1f800a02884f4fb2ad9fae59d2170de638c942189fdac65cca537a3325a442302f8933199bee35c29f3e5fdf2fa24
+  checksum: 4426d57300d3c0e971b529b895b5a07ccda4cc7a48c07c7244e834f1b3e6198398d9c02b7928d7d49e15ea7e141f8ccd9fc913275251a9f49d4ce01e3fb5ba3e
   languageName: node
   linkType: hard
 
@@ -21922,7 +21922,7 @@ __metadata:
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
     "@fontsource/roboto": ^5.0.8
-    "@mui/icons-material": ^5.14.6
+    "@mui/icons-material": ^5.14.7
     "@mui/material": ^5.14.6
     "@redwoodjs/auth-dbauth-setup": 6.1.0
     "@redwoodjs/cli-storybook": 6.1.0

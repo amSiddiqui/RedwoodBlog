@@ -10,4 +10,8 @@ export default meta
 
 type Story = StoryObj<typeof BlogLayout>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    children: 'This is the primary content',
+  },
+}

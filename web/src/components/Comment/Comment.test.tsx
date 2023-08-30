@@ -1,4 +1,4 @@
-import { render } from '@redwoodjs/testing/web'
+import { render, screen } from '@redwoodjs/testing/web'
 
 import Comment from './Comment'
 
@@ -7,8 +7,20 @@ import Comment from './Comment'
 
 describe('Comment', () => {
   it('renders successfully', () => {
+    const comment = {
+      name: 'John Doe',
+      createdAt: '2021-10-10',
+      body: 'Body of comment',
+    }
     expect(() => {
-      render(<Comment />)
+      render(<Comment comment={comment} />)
     }).not.toThrow()
+
+    expect(screen.getByText(comment.name)).toBeInTheDocument()
+    expect(screen.getByText(comment.body)).toBeInTheDocument()
+    const dateExpect = screen.getByText('10 October 2021')
+    expect(dateExpect).toBeInTheDocument()
+    expect(dateExpect.tagName).toEqual('TIME')
+    expect(dateExpect).toHaveAttribute('datetime', '2021-10-10')
   })
 })

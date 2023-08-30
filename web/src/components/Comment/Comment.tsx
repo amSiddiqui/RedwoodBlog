@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 interface Props {
   comment: {
     name: string
@@ -7,10 +9,11 @@ interface Props {
 }
 
 const Comment = ({ comment }: Props) => {
+  const formattedDate = moment(comment.createdAt).format('D MMMM YYYY')
   return (
     <div>
       <h2>{comment.name}</h2>
-      <time dateTime={comment.createdAt}>{comment.createdAt}</time>
+      <time dateTime={comment.createdAt}>{formattedDate}</time>
       <p>{comment.body}</p>
     </div>
   )
